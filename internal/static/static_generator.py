@@ -1,5 +1,5 @@
 '''
-@File     :  generator.py
+@File     :  static_generator.py
 @Desc     :  Static generator class, to write the static HTML report to disk
 @Authors  :  Nick Vissers <nick.vissers@openpixelsystems.org>
 @Date     :  25/12/2023

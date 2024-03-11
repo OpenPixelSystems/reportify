@@ -1,5 +1,5 @@
 '''
-@File     :  builder.py
+@File     :  dynamic_builder.py
 @Desc     :  Dynamic builder class, to generate HTML content for the dynamic reports
 @Authors  :  Nick Vissers <nick.vissers@openpixelsystems.org>
 @Date     :  24/12/2023

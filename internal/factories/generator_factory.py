@@ -1,8 +1,8 @@
 '''
-@File     :  builder.py
-@Desc     :  Builder factory, to create the correct builder based on the report mode
+@File     :  generator_factory.py
+@Desc     :  Generator factory, to create the correct generator based on the report mode
 @Authors  :  Nick Vissers <nick.vissers@openpixelsystems.org>
-@Date     :  24/12/2023
+@Date     :  25/12/2023
 @Version  :  1.0
 @License  :  Copyright (C) 2023 Open Pixel Systems. All rights reserved.
           :  Confidential and for internal use only. The content of this document constitutes proprietary
@@ -10,24 +10,25 @@
           :  of any part of the content of this document by unauthorized parties is strictly prohibited.
 '''
 
-from internal.builder import Builder
 from internal.collector import Asset
-from internal.dynamic.builder import DynamicBuilder
+from internal.dynamic.dynamic_generator import DynamicGenerator
+from internal.generator import Generator
 from internal.logger import Logger
-from internal.static.builder import StaticBuilder
+from internal.static.static_generator import StaticGenerator
+
 from internal.internal_types import ReportMode
 
 
-class BuilderFactory:
+class GeneratorFactory:
     class Error(Exception):
         def __init__(self):
             super().__init__("Unknown report mode")
 
     @staticmethod
-    def create(mode: ReportMode, styles: list[Asset], scripts: list[Asset], logger: Logger) -> Builder:
+    def create(mode: ReportMode, styles: list[Asset], scripts: list[Asset], logger: Logger) -> Generator:
         if mode == ReportMode.STATIC:
-            return StaticBuilder(styles, scripts, logger)
+            return StaticGenerator(styles, scripts, logger)
         elif mode == ReportMode.DYNAMIC:
-            return DynamicBuilder(styles, scripts, logger)
+            return DynamicGenerator(styles, scripts, logger)
 
-        raise BuilderFactory.Error()
+        raise GeneratorFactory.Error()

@@ -20,8 +20,8 @@ from enum import Enum
 
 from internal.builder import Builder
 from internal.collector import Collector
-from internal.factories.builder import BuilderFactory
-from internal.factories.generator import GeneratorFactory
+from internal.factories.builder_factory import BuilderFactory
+from internal.factories.generator_factory import GeneratorFactory
 from internal.logger import Logger
 from internal.parser import Parser
 from internal.internal_types import ReportMode

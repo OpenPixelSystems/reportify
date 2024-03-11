@@ -1,5 +1,5 @@
 '''
-@File     :  generator.py
+@File     :  dynamic_generator.py
 @Desc     :  Dynamic generator class, to write the dynamic HTML report and copy the assets to disk
 @Authors  :  Nick Vissers <nick.vissers@openpixelsystems.org>
 @Date     :  25/12/2023

@@ -1,5 +1,5 @@
 '''
-@File     :  builder.py
+@File     :  static_builder.py
 @Desc     :  Static builder class, to generate HTML content for the static reports
 @Authors  :  Nick Vissers <nick.vissers@openpixelsystems.org>
 @Date     :  24/12/2023
