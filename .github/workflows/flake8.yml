@@ -1,0 +1,14 @@
+name: flake8
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  flake8:
+    runs-on:
+      group: organization/baremetal
+
+    steps:
+      - uses: actions/checkout@v3
+      - run: flake8 ./
