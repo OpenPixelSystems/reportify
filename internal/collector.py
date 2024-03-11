@@ -13,7 +13,7 @@
 import glob
 
 from internal.logger import Logger
-from internal.types import ReportMode
+from internal.internal_types import ReportMode
 
 
 class Asset:

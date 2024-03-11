@@ -24,7 +24,7 @@ from internal.factories.builder import BuilderFactory
 from internal.factories.generator import GeneratorFactory
 from internal.logger import Logger
 from internal.parser import Parser
-from internal.types import ReportMode
+from internal.internal_types import ReportMode
 
 
 class Error(Enum):

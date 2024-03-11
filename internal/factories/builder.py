@@ -15,7 +15,7 @@ from internal.collector import Asset
 from internal.dynamic.builder import DynamicBuilder
 from internal.logger import Logger
 from internal.static.builder import StaticBuilder
-from internal.types import ReportMode
+from internal.internal_types import ReportMode
 
 
 class BuilderFactory:

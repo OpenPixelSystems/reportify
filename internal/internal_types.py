@@ -1,5 +1,5 @@
 '''
-@File     :  types.py
+@File     :  internal_types.py
 @Desc     :  Files with custom types
 @Authors  :  Nick Vissers <nick.vissers@openpixelsystems.org>
 @Date     :  23/12/2023

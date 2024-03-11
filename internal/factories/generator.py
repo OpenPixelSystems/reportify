@@ -16,7 +16,7 @@ from internal.generator import Generator
 from internal.logger import Logger
 from internal.static.generator import StaticGenerator
 
-from internal.types import ReportMode
+from internal.internal_types import ReportMode
 
 
 class GeneratorFactory:
