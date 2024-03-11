@@ -5,8 +5,7 @@ on:
 
 jobs:
   build:
-    runs-on:
-      group: organization/baremetal
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
