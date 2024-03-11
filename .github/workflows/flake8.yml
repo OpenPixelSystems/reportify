@@ -6,9 +6,9 @@ on:
 
 jobs:
   flake8:
-    runs-on:
-      group: organization/baremetal
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
+      - run: pip3 install flake8
       - run: flake8 ./
