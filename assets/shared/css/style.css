@@ -1,0 +1,305 @@
+/*
+ * File     :  style.css
+ * Desc     :  CSS styles for the reports.
+ * Authors  :  Nick Vissers <nick.vissers@openpixelsystems.org>
+ * Date     :  31/12/2023
+ * Version  :  1.0
+ * License  :  Copyright (C) 2023 Open Pixel Systems. All rights reserved.
+ *             Confidential and for internal use only. The content of this document constitutes proprietary
+ *             information of the Open Pixel Systems company. Any disclosure, copying, distribution or use
+ *             of any part of the content of this document by unauthorized parties is strictly prohibited.
+ */
+
+body {
+    margin: 0;
+    padding: 0 25px;
+    width: 100%;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+
+    background-color: #f4f4f4;
+}
+
+h1, h2, h3 {
+    margin: 25px 0 0 0;
+    padding: 0;
+    line-height: 1;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    margin: 15px 0;
+    font-size: 1.17em;
+}
+
+table {
+    overflow: hidden;
+}
+
+/* Shared */
+
+.hidden {
+    display: none;
+}
+
+.selectable {
+    cursor: pointer;
+}
+
+.test-table,
+div.all-filtered-out,
+div.no-tests,
+div.no-steps {
+    margin: 25px 0;
+    padding: 0;
+    width: 100%;
+    min-width: 500px;
+    border-radius: 5px;
+    
+    font-size: 0.9em;
+    
+    border-collapse: collapse;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Test table */
+
+.test-table tr th,
+.test-table tr td {
+    padding: 12px 15px;
+}
+
+.test-table tr th {
+    color: #ffffff;
+    text-align: left;
+
+    background-color: #13567e;
+}
+
+.test-table tr {
+    border-bottom: 1px solid #13567e20;
+}
+
+.test-table tr.no-border {
+    border-bottom: none;
+}
+
+.test-table tfoot tr td {
+    color: inherit;
+    text-align: center;
+    background-color: #13567e;
+}
+
+.test-table tfoot.passed tr td {
+    color: #ccffcf;
+}
+
+.test-table tfoot.failed tr td {
+    color: #ffb3b9;
+}
+
+.test-table tfoot.skipped tr td {
+    color: #ffe6b0;
+}
+
+.test-table tr:last-of-type {
+    border-bottom: 2px solid #13567e;
+}
+
+.passed {
+    background-color: #ccffcf;
+}
+
+.failed {
+    background-color: #ffb3b9;
+}
+
+.skipped {
+    background-color: #ffe6b0;
+}
+
+.mixed {
+    background-color: #f4f4f4;
+}
+
+/* Individual test */
+
+div.individual-test {
+    border-bottom: 1px solid #13567e20;
+}
+
+div.individual-test:last-of-type {
+    border-bottom: none;
+}
+
+table.individual-test-table {
+    width: 100%;
+    min-width: 50%;
+    max-width: 600px;
+}
+
+div.test-description {
+    line-height: 1.2;
+}
+
+span.ran-on {
+    font-weight: bold;
+}
+
+/* Action bar */
+
+div.action-bar {
+    margin: 25px 0;
+}
+
+div.action-bar button.hide,
+div.action-bar button.show {
+    margin: 0 10px 0 0;
+    padding: 3px 10px;
+    width: 125px;
+    
+    color: #13567e;
+
+    font-size: 0.9em;
+    font-weight: normal;
+    line-height: 1.5;
+
+    vertical-align: middle;
+
+    border: 1px solid #13567e;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    
+    cursor: pointer;
+}
+
+div.action-bar button.hide,
+div.action-bar button.show {
+    width: 125px;
+}
+
+div.action-bar button.hide:hover,
+div.action-bar button.show:hover {
+    color: #ffffff;
+    background-color: #13567e;
+}
+
+div.action-bar span.summary {
+    display: inline-block;
+
+    margin: 0;
+    padding: 3px 0;
+    
+    color: #666666;
+
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+div.action-bar span.summary button.tile,
+div.action-bar span.summary span.tile {
+    display: inline-block;
+
+    margin: 0 10px 0 0;
+    padding: 3px 10px;
+
+    color: #666666;
+
+    font-size: 1em;
+    font-weight: normal;
+    line-height: 1.5;
+
+    vertical-align: middle;
+
+    border: 1px solid transparent;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+div.action-bar span.summary button.tile {
+    cursor: pointer;
+}
+
+div.action-bar span.summary button.tile.total:disabled {
+    pointer-events: none;
+}
+
+div.action-bar span.summary button.tile.total,
+div.action-bar span.summary button.tile.total.active:hover {
+    border: 1px solid #cfcfcf;
+    background-color: transparent;
+}
+
+div.action-bar span.summary button.tile.total:hover,
+div.action-bar span.summary button.tile.total.active,
+div.action-bar span.summary span.tile.total {
+    background-color: #cfcfcf;
+}
+
+div.action-bar span.summary button.tile.passed,
+div.action-bar span.summary button.tile.passed.active:hover {
+    border: 1px solid #ccffcf;
+    background-color: transparent;
+}
+
+div.action-bar span.summary button.tile.passed:hover,
+div.action-bar span.summary button.tile.passed.active,
+div.action-bar span.summary span.tile.passed {
+    background-color: #ccffcf;
+}
+
+div.action-bar span.summary button.tile.failed,
+div.action-bar span.summary button.tile.failed.active:hover {
+    border: 1px solid #ffb3b9;
+    background-color: transparent;
+}
+
+div.action-bar span.summary button.tile.failed:hover,
+div.action-bar span.summary button.tile.failed.active,
+div.action-bar span.summary span.tile.failed {
+    background-color: #ffb3b9;
+}
+
+div.action-bar span.summary button.tile.skipped,
+div.action-bar span.summary button.tile.skipped.active:hover {
+    border: 1px solid #ffe6b0;
+    background-color: transparent;
+}
+
+div.action-bar span.summary button.tile.skipped:hover,
+div.action-bar span.summary button.tile.skipped.active,
+div.action-bar span.summary span.tile.skipped {
+    background-color: #ffe6b0;
+}
+
+/* Empty table placeholders */
+
+div.all-filtered-out,
+div.no-tests,
+div.no-steps {
+    padding: 12px 15px;
+
+    min-width: 50%;
+    max-width: 600px;
+
+    background-color: #cccccc;
+    border-bottom: 2px solid #13567e;
+}
+
+/* Devices selects */
+
+span.devices {
+    display: inline-block;
+    position: relative;
+    margin: 0 10px 0 0;
+    width: auto;
+}

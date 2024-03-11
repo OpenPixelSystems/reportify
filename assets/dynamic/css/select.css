@@ -1,0 +1,140 @@
+/*
+ * File     :  select.css
+ * Desc     :  CSS styles for the selects in the reports
+ * Authors  :  Nick Vissers <nick.vissers@openpixelsystems.org>
+ * Date     :  31/12/2023
+ * Version  :  1.0
+ * License  :  Copyright (C) 2023 Open Pixel Systems. All rights reserved.
+ *             Confidential and for internal use only. The content of this document constitutes proprietary
+ *             information of the Open Pixel Systems company. Any disclosure, copying, distribution or use
+ *             of any part of the content of this document by unauthorized parties is strictly prohibited.
+ */
+
+span.custom-select {
+    position: relative;
+    width: auto;
+}
+
+span.custom-select button.select-button {
+    margin: 0;
+    padding: 3px 5px;
+    width: 100%;
+
+    color: #13567e;
+    font-size: 0.9em;
+    font-weight: normal;
+    line-height: 1.5;
+
+    vertical-align: middle;
+
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #13567e;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+span.custom-select button.select-button:disabled {
+    padding: 3px 0px;
+    color: #000000;
+    border-bottom: none;
+    cursor: pointer;
+}
+
+.selected-value {
+    text-align: left;
+}
+
+span.custom-select button.select-button span.arrow {
+    margin-left: 5px;
+    height: 7px;
+    width: 10px;
+    background-color: #13567e;
+    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+    transition: transform ease-in-out 0.3s;
+}
+
+span.custom-select button.select-button:disabled span.arrow {
+    display: none;
+}
+
+span.custom-select ul.select-dropdown {
+    position: absolute;
+    list-style: none;
+    width: 100%;
+    color: #666666;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    border-radius: 0 0 5px 5px;
+    padding: 0;
+    margin-top: 0;
+    max-height: 0;
+    overflow-y: auto;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+span.custom-select ul.select-dropdown li {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+span.custom-select ul.select-dropdown li label {
+    padding: 8px 10px;
+    cursor: pointer;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+span.custom-select ul.select-dropdown::-webkit-scrollbar {
+    width: 7px;
+    opacity: 0;
+}
+
+span.custom-select ul.select-dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 25px;
+}
+
+span.custom-select ul.select-dropdown::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 25px;
+}
+
+span.custom-select ul.select-dropdown li:hover,
+span.custom-select ul.select-dropdown input:checked~label {
+    color: #ffffff;
+    background-color: #13567e;
+}
+
+span.custom-select ul.select-dropdown input:focus~label {
+    background-color: #dfdfdf;
+}
+
+span.custom-select ul.select-dropdown input[type="radio"] {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+}
+
+/* active */
+
+span.custom-select.active span.arrow {
+    transform: rotate(180deg);
+}
+
+span.custom-select.active ul.select-dropdown {
+    opacity: 1;
+    visibility: visible;
+    max-height: 200px;
+}
