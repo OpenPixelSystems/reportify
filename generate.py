@@ -36,12 +36,12 @@ class Error(Enum):
     GENERATE_REPORT = 5
 
 
-def validArguments(args: any, logger: Logger) -> Error:
-    if args.input == '':
+def validArguments(args: any, logger: Logger) -> Error:  # type: ignore
+    if args.input == '':  # type: ignore
         logger.error('input parameter is empty')
         return Error.INPUT_EMPTY
 
-    if args.output == '':
+    if args.output == '':  # type: ignore
         logger.error('output parameter is empty')
         return Error.OUTPUT_EMPTY
 
