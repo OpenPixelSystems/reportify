@@ -21,18 +21,18 @@ class Element:
     name: str
     value: str
     args = dict[str, str]
-    elements: []
+    elements: []  # type: ignore
 
     def __init__(self, name: str, value: str = '', args: dict = {}) -> None:
         self.name = name
         self.value = value
-        self.args = args
+        self.args = args  # type: ignore
         self.elements = []
 
     def add(self, element: Any) -> None:
         self.elements.append(element)
 
-    def get(self) -> []:
+    def get(self) -> []: # type: ignore
         return self.elements
 
 
@@ -64,8 +64,8 @@ class Builder:
     def _build(self, element: Element) -> str:
         content = f'<{element.name}'
 
-        for arg in element.args:
-            content += f' {arg}="{element.args[arg]}"'
+        for arg in element.args: # type: ignore
+            content += f' {arg}="{element.args[arg]}"' # type: ignore
 
         if element.value == '':
             if len(element.elements) == 0:

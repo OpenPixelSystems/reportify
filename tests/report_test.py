@@ -1,3 +1,4 @@
+# type: ignore
 import pytest
 
 from test_helpers import get_docstr, get_name, add_step

@@ -39,7 +39,7 @@ class DynamicBuilder(Builder):
             head.add(style)
 
         scripts = self._scripts()
-        for script in scripts:
+        for script in scripts:  # type: ignore
             head.add(script)
 
         head.add(self._test_data(test_data))
@@ -54,7 +54,7 @@ class DynamicBuilder(Builder):
 
         return styles
 
-    def _scripts(self) -> Element:
+    def _scripts(self) -> list[Element]:
         scripts: list[Element] = []
 
         for script in self.scripts:

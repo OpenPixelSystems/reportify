@@ -159,12 +159,12 @@ class StaticBuilder(Builder):
                     if execution.id == 0:
                         rowspan = {'rowspan': f'{execution_count}'}
 
-                        tbody_tr.add(Element('td', test.id, rowspan))
+                        tbody_tr.add(Element('td', str(test.id), rowspan))
                         tbody_tr.add(Element('td', execution.outcome, execution_outcome_class))
                         tbody_tr.add(Element('td', execution.device, execution_outcome_class))
                         tbody_tr.add(Element('td', test.name, rowspan))
                         tbody_tr.add(Element('td', f'{execution.duration:.2f}s', execution_outcome_class))
-                        tbody_tr.add(Element('td', len(test.executions), {'align': 'center'} | rowspan))
+                        tbody_tr.add(Element('td', str(len(test.executions)), {'align': 'center'} | rowspan))
                     else:
                         tbody_tr.add(Element('td', execution.outcome, execution_outcome_class))
                         tbody_tr.add(Element('td', execution.device, execution_outcome_class))
@@ -280,7 +280,7 @@ class StaticBuilder(Builder):
 
         return div
 
-    def _individual_test_table_container(self, test: Test, execution: Execution) -> str:
+    def _individual_test_table_container(self, test: Test, execution: Execution) -> Element:
         div = Element('div', '', {'class': 'individual-test-execution-table-container'})
 
         if len(execution.steps) > 0:

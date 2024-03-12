@@ -1,3 +1,5 @@
+# type: ignore
+
 import inspect
 from datetime import datetime
 

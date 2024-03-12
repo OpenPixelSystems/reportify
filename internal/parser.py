@@ -162,7 +162,7 @@ class Parser:
         self.include_self_tests = include_self_tests
         self.logger = logger
 
-    def parse(self) -> Tests:
+    def parse(self) -> Tests | None:
         all_tests = Tests()
 
         id = 0
@@ -186,14 +186,14 @@ class Parser:
 
                 all_tests.tests = all_tests.tests | tests.tests
 
-        self.logger.debug(all_tests)
+        self.logger.debug(all_tests)  # type: ignore
 
         return all_tests
 
     def _toList(self, files: str) -> list[str]:
         return files.split(',') if ',' in files else [files]
 
-    def _read_test(self, tests: Tests, json_data: dict, id: int) -> [Tests, int]:
+    def _read_test(self, tests: Tests, json_data: dict, id: int) -> [Tests, int]:  # type: ignore
         test = Test()
 
         test.id = id
@@ -202,7 +202,7 @@ class Parser:
             self.logger.error(f'no metadata found for test: {test.node_id}')
             return None, -1
 
-        test.name = self._readKey('active_test', json_data['metadata'], test.node_id)
+        test.name = self._readKey('active_test', json_data['metadata'], test.node_id) # type: ignore
         if test.name is None:
             return None, -1
 
@@ -217,7 +217,7 @@ class Parser:
             self.logger.error(f'name {test.name} not found in node id {test.node_id}')
             return None, -1
 
-        test.description = self._readKey('description', json_data['metadata'], test.node_id)
+        test.description = self._readKey('description', json_data['metadata'], test.node_id) # type: ignore
         if test.description is None:
             return None, -1
 
@@ -248,7 +248,7 @@ class Parser:
 
         return tests, id
 
-    def _read_execution(self, json_data: dict, id: int, node_id: str) -> Execution:
+    def _read_execution(self, json_data: dict, id: int, node_id: str) -> Execution | None:
         execution = Execution()
 
         execution.id = id
@@ -265,7 +265,8 @@ class Parser:
         if execution.outcome is None:
             return None
 
-        execution.duration = self._readKey('duration', json_data['call'], node_id)
+        # TODO(bravl): check if this is actually correct str to float conversion
+        execution.duration = self._readKey('duration', json_data['call'], node_id)  # type: ignore
         if execution.duration is None:
             return None
 
@@ -277,7 +278,7 @@ class Parser:
 
         return execution
 
-    def _read_steps(self, json_data: dict, node_id: str) -> list[Step]:
+    def _read_steps(self, json_data: dict, node_id: str) -> list[Step] | None:
         steps: list[Step] = []
 
         if not self._hasKey('steps', json_data['metadata'], node_id):
@@ -308,7 +309,7 @@ class Parser:
 
         return steps
 
-    def _get_test(self, name: str, tests: Tests) -> Test:
+    def _get_test(self, name: str, tests: Tests) -> Test | None:
         for key, value in tests.tests.items():
             if key == name:
                 return value
@@ -337,7 +338,7 @@ class Parser:
 
     def _readKey(self, key: str, data: dict, node_id: str = '', step_key: str = '') -> str:
         if not self._hasKey(key, data, node_id):
-            return None
+            return None  # type: ignore
 
         return data[key]
 

@@ -61,8 +61,8 @@ class Generator:
                 'executions': executions
             }
 
-        tests = {}
-        tests['tests'] = data
+        tests = {} # type: ignore
+        tests['tests'] = data # type: ignore
 
         return json.dumps(tests, indent=4)
 
