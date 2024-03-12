@@ -265,7 +265,6 @@ class Parser:
         if execution.outcome is None:
             return None
 
-        # TODO(bravl): check if this is actually correct str to float conversion
         execution.duration = self._readKey('duration', json_data['call'], node_id)  # type: ignore
         if execution.duration is None:
             return None
