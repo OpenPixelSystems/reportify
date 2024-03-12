@@ -32,7 +32,7 @@ class Element:
     def add(self, element: Any) -> None:
         self.elements.append(element)
 
-    def get(self) -> []: # type: ignore
+    def get(self) -> []:  # type: ignore
         return self.elements
 
 
@@ -64,8 +64,8 @@ class Builder:
     def _build(self, element: Element) -> str:
         content = f'<{element.name}'
 
-        for arg in element.args: # type: ignore
-            content += f' {arg}="{element.args[arg]}"' # type: ignore
+        for arg in element.args:  # type: ignore
+            content += f' {arg}="{element.args[arg]}"'  # type: ignore
 
         if element.value == '':
             if len(element.elements) == 0:

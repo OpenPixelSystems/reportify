@@ -202,7 +202,7 @@ class Parser:
             self.logger.error(f'no metadata found for test: {test.node_id}')
             return None, -1
 
-        test.name = self._readKey('active_test', json_data['metadata'], test.node_id) # type: ignore
+        test.name = self._readKey('active_test', json_data['metadata'], test.node_id)  # type: ignore
         if test.name is None:
             return None, -1
 
@@ -217,7 +217,7 @@ class Parser:
             self.logger.error(f'name {test.name} not found in node id {test.node_id}')
             return None, -1
 
-        test.description = self._readKey('description', json_data['metadata'], test.node_id) # type: ignore
+        test.description = self._readKey('description', json_data['metadata'], test.node_id)  # type: ignore
         if test.description is None:
             return None, -1
 
