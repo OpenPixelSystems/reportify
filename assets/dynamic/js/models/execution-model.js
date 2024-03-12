@@ -1,13 +1,10 @@
 /*
+ * SPDX-License-Identifier: MIT
  * File     :  execution-model.js
  * Desc     :  ExecutionModel class, to hold the state of the individual test execution container of the reports
  * Authors  :  Nick Vissers <nick.vissers@openpixelsystems.org>
  * Date     :  02/01/2024
  * Version  :  1.0
- * License  :  Copyright (C) 2024 Open Pixel Systems. All rights reserved.
- *             Confidential and for internal use only. The content of this document constitutes proprietary
- *             information of the Open Pixel Systems company. Any disclosure, copying, distribution or use
- *             of any part of the content of this document by unauthorized parties is strictly prohibited.
  */
 
 class ExecutionModel {

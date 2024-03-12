@@ -1,13 +1,11 @@
+# SPDX-License-Identifier: MIT
+
 '''
 @File     :  static_generator.py
 @Desc     :  Static generator class, to write the static HTML report to disk
 @Authors  :  Nick Vissers <nick.vissers@openpixelsystems.org>
 @Date     :  25/12/2023
 @Version  :  1.0
-@License  :  Copyright (C) 2023 Open Pixel Systems. All rights reserved.
-          :  Confidential and for internal use only. The content of this document constitutes proprietary
-          :  information of the Open Pixel Systems company. Any disclosure, copying, distribution or use
-          :  of any part of the content of this document by unauthorized parties is strictly prohibited.
 '''
 
 import os
