@@ -1,0 +1,3 @@
+[submodule "scripts/ops-document-template"]
+	path = scripts/ops-document-template
+	url = https://github.com/OpenPixelSystems/ops-document-template.git

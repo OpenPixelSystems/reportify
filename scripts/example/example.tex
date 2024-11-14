@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage{ops-document-template/template}
+\usepackage{xcolor}
+\definecolor{lightgreen}{rgb}{0.56, 0.93, 0.56}
+
+\begin{document}
+\title{Title}
+\author{<name>}
+\date{<date>}
+\maketitle
+\newpage
+
+\section{The body starts from the first title}
+\begin{enumerate}\item You can start \item an enumeration\item with a '-'\end{enumerate}
+\begin{enumerate}\item Or you can start\item an enumeration\item with a NUMBER.\item the order of numbers\item does not matter\end{enumerate}
+\section{The titles will be converted to sections in the latex File}
+\subsection{Subtitles will be converted to subsections in the latex File}
+\section{whitespaces }
+Whitespaces will be removed to keep the document clean\\
+as \\
+you\\
+can\\
+see\\
+\section{Test results}
+To make the test results clear, the words \colorbox{lightgreen}{\textbf{SUCCES}} and \colorbox{red}{\textbf{FAIL}} will be highlighted in green and red respectively.\\
+
+\end{document}
